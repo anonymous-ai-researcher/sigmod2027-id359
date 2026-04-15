@@ -233,20 +233,6 @@ Experiments were run on:
 | BioClinicalBERT | 768 | `emilyalsentzer/Bio_ClinicalBERT` |
 | text-embedding-3-large | 3072 | OpenAI API |
 
-## Citation
-
-```bibtex
-@inproceedings{anonymous2027phantom,
-  title     = {Phantom Neighbors: Information Leakage and Its Prevention 
-               in Access-Controlled Vector Databases},
-  author    = {Anonymous},
-  booktitle = {Proceedings of the ACM SIGMOD International Conference 
-               on Management of Data},
-  year      = {2027},
-  note      = {Under review}
-}
-```
-
 ## License
 
 This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
