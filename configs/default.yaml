@@ -1,0 +1,56 @@
+# Default hyperparameter configuration
+# See Appendix D, Table: Complete Hyperparameter Configuration
+
+# ANN Index (HNSW)
+hnsw:
+  M: 32                    # edges per node
+  ef_construction: 200
+  ef_search: 200
+  metric: "l2"             # Euclidean distance
+
+# ANN Index (IVF-PQ)
+ivfpq:
+  n_list: 256              # Voronoi cells
+  n_probe: 16
+  n_subquantizers: 64
+  bits_per_subquantizer: 8
+
+# Defense Framework
+defense:
+  epsilon_0: 1.0            # global privacy budget (default)
+  delta: 1.0e-6             # DP delta
+  k: 10                     # number of neighbors
+  k_prime_factor: 2         # over-retrieval factor (k' = k_prime_factor * k)
+  c: 1                      # decoys per restricted vector
+  sigma_dec: "auto"         # median distance from restricted to 10-th nearest authorized
+  rho_max_percentile: 95    # percentile for rho_max
+  rho_min_ratio: 0.1        # rho_min = rho_max * rho_min_ratio
+  manifold_aware: true      # use manifold-aware decoys
+  d_int_method: "pca"       # intrinsic dimensionality estimation
+  d_int_variance: 0.95      # cumulative variance threshold for d_int
+  pca_neighbors: 50         # ell: neighbors for local PCA
+
+# Risk Map
+risk_map:
+  epsilon_rho: 0.1          # privacy budget for risk map release
+  delta_rho: 1.0e-6
+  min_vectors_per_cell: 100 # adaptive grid resolution
+
+# Decoy Privacy
+decoy:
+  delta_dec: 1.0e-6         # DP delta for decoy generation
+
+# Evaluation
+evaluation:
+  n_queries: 1000           # evaluation queries per dataset per role
+  n_positive: 500           # queries with nearby restricted vectors
+  n_negative: 500           # queries without nearby restricted vectors
+  n_seeds: 5                # random seeds for reproducibility
+  m_adaptive: 20            # adaptive queries for Channel 3
+
+# Embedding
+embedding:
+  default_model: "BAAI/bge-m3"
+  batch_size: 128
+  max_length: 512
+  normalize: true           # L2-normalize embeddings

@@ -1,0 +1,13 @@
+# MIMIC-IV specific configuration
+dataset:
+  name: "MIMIC-IV"
+  n_vectors: 331000
+  alpha: 0.35               # restriction ratio (max across roles)
+  roles:
+    icu_staff: 0.12
+    general_ward: 0.22
+    ed: 0.28
+    outpatient: 0.35
+  embedding_model: "BAAI/bge-m3"
+  additional_models:
+    - "emilyalsentzer/Bio_ClinicalBERT"

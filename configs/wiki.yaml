@@ -1,0 +1,13 @@
+# Wiki-Enterprise specific configuration
+dataset:
+  name: "Wiki-Enterprise"
+  n_vectors: 500000
+  alpha: 0.20
+  roles:
+    executive: 0.10
+    finance: 0.14
+    legal: 0.16
+    hr: 0.18
+    engineering: 0.20
+  departments: ["Engineering", "HR", "Finance", "Legal", "Executive"]
+  embedding_model: "BAAI/bge-m3"

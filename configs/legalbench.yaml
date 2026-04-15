@@ -1,0 +1,10 @@
+# LegalBench-RAG specific configuration
+dataset:
+  name: "LegalBench-RAG"
+  n_vectors: 48000
+  alpha: 0.30
+  roles:
+    associates: 0.20
+    non_partner: 0.30
+  embedding_model: "BAAI/bge-m3"
+  n_qa_pairs: 6800
